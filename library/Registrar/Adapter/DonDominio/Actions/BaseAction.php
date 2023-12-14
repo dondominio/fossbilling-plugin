@@ -7,8 +7,13 @@ use Dondominio\API\Response\Response;
 
 abstract class BaseAction
 {
-    public function __construct(protected API $api)
-    {
+    public function __construct(
+        protected API $api,
+        private string $override_owner = '',
+        private string $override_admin = '',
+        private string $override_tech = '',
+        private string $override_billing = '',
+    ) {
     }
 
     protected function checkResponse(Response $response): void
@@ -35,10 +40,10 @@ abstract class BaseAction
     protected function parseDomainContacts(\Registrar_Domain $domain): array
     {
         return [
-            ...$this->parseContact($domain->getContactRegistrar(), 'owner'),
-            ...$this->parseContact($domain->getContactAdmin(), 'admin'),
-            ...$this->parseContact($domain->getContactTech(), 'tech'),
-            ...$this->parseContact($domain->getContactBilling(), 'billing'),
+            ...(strlen($this->override_owner) ? ['ownerContactID' => $this->override_owner] : $this->parseContact($domain->getContactRegistrar(), 'owner')),
+            ...(strlen($this->override_admin) ? ['adminContactID' => $this->override_admin] : $this->parseContact($domain->getContactAdmin(), 'admin')),
+            ...(strlen($this->override_tech) ? ['techContactID' => $this->override_tech] : $this->parseContact($domain->getContactTech(), 'tech')),
+            ...(strlen($this->override_billing) ? ['billingContactID' => $this->override_billing] : $this->parseContact($domain->getContactBilling(), 'billing')),
         ];
     }
 
