@@ -14,3 +14,5 @@
 
 Este es el plugin de Registrador de DonDominio para FossBilling. Una vez instalado, permitirá
 registrar, renovar y transferir dominios usando la API de DonDominio.
+
+[Documentación completa](https://dondominio.dev/es/fossbilling/docs/plugin/)
