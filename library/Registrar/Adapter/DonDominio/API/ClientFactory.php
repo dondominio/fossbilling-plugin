@@ -9,7 +9,7 @@ class ClientFactory
     public static function instance(string $user, string $password)
     {
         return new API([
-            'endpoint' => 'https://simple-api-test.dondominio.net',
+            'endpoint' => 'https://simple-api.dondominio.net',
             'apiuser' => $user,
             'apipasswd' => $password,
             'autoValidate' => false,
