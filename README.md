@@ -8,7 +8,7 @@
 
 ## Instalación
 - Arrastrar la carpeta `library` dentro de la carpeta raíz de FossBilling y aceptar todos los cambios
-- Comprobar que el plugin se encuentra en el directorio `/library/Registrar/Adapter/DonDominio/`
+- Comprobar que existe la carpeta `/library/Registrar/Adapter/DonDominio/` y el archivo `/library/Registrar/Adapter/DonDominio.php`
 
 ## Documentación
 
