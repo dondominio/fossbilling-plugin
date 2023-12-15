@@ -10,3 +10,7 @@
 - Arrastrar la carpeta `library` dentro de la carpeta raíz de FossBilling y aceptar todos los cambios
 - Comprobar que el plugin se encuentra en el directorio `/library/Registrar/Adapter/DonDominio/`
 
+## Documentación
+
+Este es el plugin de Registrador de DonDominio para FossBilling. Una vez instalado, permitirá
+registrar, renovar y transferir dominios usando la API de DonDominio.
